@@ -1,57 +1,31 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فتح مواقع متعددة</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 14px;
-            margin: 5px;
-            cursor: pointer;
-            display: inline-block;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Open Windows</title>
 </head>
 <body>
-    <h1>افتح 25 نافذة لجوجل</h1>
-    <div id="buttons-container">
-        <!-- أزرار سيتم إضافتها عبر JavaScript -->
-    </div>
-
+    <button id="openWindows">افتح النوافذ</button>
     <script>
-        const numButtons = 3; // عدد الأزرار
-        const numSitesPerButton = 100; // عدد النوافذ لكل زر
-        const url = 'https://t.ajrkm3.com/338035/8865/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN';
+        document.getElementById('openWindows').addEventListener('click', () => {
+            // عدد النوافذ التي نريد فتحها
+            const numberOfWindows = 10;
 
-        function openSites() {
-            for (let i = 0; i < numSitesPerButton; i++) {
-                window.open(url, '_blank');
-            }
-        }
+            // الوقت بين فتح كل نافذة (بالميلي ثانية)
+            const interval = 3000; // 6000 ميلي ثانية = 6 ثواني
 
-        // إنشاء الأزرار وإضافتها إلى الصفحة
-        const buttonsContainer = document.getElementById('buttons-container');
-        for (let i = 0; i < numButtons; i++) {
-            const button = document.createElement('button');
-            button.className = 'button';
-            button.textContent = `افتح 25 نافذة لجوجل ${i + 1}`;
-            button.onclick = openSites;
-            buttonsContainer.appendChild(button);
-        }
+            // فتح النوافذ بشكل متكرر
+            let opened = 0;
+            const openWindowInterval = setInterval(() => {
+                if (opened < numberOfWindows) {
+                    window.open('https://t.ajrkm3.com/338035/8865/0?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN', '_blank'); // استبدل الرابط بعنوان الصفحة التي تريد فتحها
+                    opened++;
+                } else {
+                    clearInterval(openWindowInterval); // إيقاف عملية فتح النوافذ بعد الوصول إلى العدد المطلوب
+                }
+            }, interval);
+        });
     </script>
 </body>
 </html>
