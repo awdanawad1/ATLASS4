@@ -6,14 +6,14 @@
     <title>Open Windows</title>
 </head>
 <body>
-    <button id="openWindows">افتح النوافذ</button>
+    <button id="openWindows">افتح 100 نافذة</button>
     <script>
         document.getElementById('openWindows').addEventListener('click', () => {
             // عدد النوافذ التي نريد فتحها
-            const numberOfWindows = 20;
+            const numberOfWindows = 100;
 
             // الوقت بين فتح كل نافذة (بالميلي ثانية)
-            const interval = 100; // 6000 ميلي ثانية = 6 ثواني
+            const interval = 100; // 100 ميلي ثانية بين كل نافذة
 
             // فتح النوافذ بشكل متكرر
             let opened = 0;
