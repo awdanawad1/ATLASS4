@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Windows</title>
+    <title>فتح 50 نافذة إلى جوجل</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <button id="openWindows">افتح 100 نافذة</button>
+    <button onclick="openWindows()">فتح 50 نافذة إلى جوجل</button>
     <script>
-        document.getElementById('openWindows').addEventListener('click', () => {
-            // عدد النوافذ التي نريد فتحها
-            const numberOfWindows = 45;
-
-            // الوقت بين فتح كل نافذة (بالميلي ثانية)
-            const interval = 10; // تأخير 500 ميلي ثانية بين كل نافذة
-
-            // فتح النوافذ بشكل متكرر
-            let opened = 0;
-            const openWindowInterval = setInterval(() => {
-                if (opened < numberOfWindows) {
-                    window.open('https://t.ajrkm3.com/338035/8865/33286?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN', '_blank'); // استبدل الرابط بعنوان الصفحة التي تريد فتحها
-                    opened++;
-                } else {
-                    clearInterval(openWindowInterval); // إيقاف عملية فتح النوافذ بعد الوصول إلى العدد المطلوب
-                }
-            }, interval);
-        });
+        function openWindows() {
+            for (let i = 0; i < 50; i++) {
+                window.open('https://t.ajrkm3.com/338035/8865/33286?bo=2779,2778,2777,2776,2775&po=6533&aff_sub5=SF_006OG000004lmDN', '_blank'); // فتح النوافذ إلى جوجل
+            }
+        }
     </script>
 </body>
 </html>
